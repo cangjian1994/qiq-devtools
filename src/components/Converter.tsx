@@ -5,7 +5,7 @@ import { Copy, Check } from 'lucide-react';
 
 type Mode = 'yaml' | 'xml';
 
-export const Converter: React.FC = () => {
+export const Converter: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
   const [activeMode, setActiveMode] = useState<Mode>('yaml');
   const [jsonText, setJsonText] = useState<string>('{\n  "project": {\n    "name": "QiQ Tools",\n    "version": "1.0.0",\n    "dependencies": [\n      "react",\n      "vite"\n    ]\n  }\n}');
   const [targetText, setTargetText] = useState<string>('');
@@ -230,7 +230,7 @@ export const Converter: React.FC = () => {
             <Editor
               height="100%"
               defaultLanguage="json"
-              theme="vs-dark"
+              theme={theme === 'dark' ? 'vs-dark' : 'vs'}
               value={jsonText}
               onChange={(value) => handleJsonChange(value || '')}
               options={{
@@ -276,7 +276,7 @@ export const Converter: React.FC = () => {
             <Editor
               height="100%"
               language={activeMode}
-              theme="vs-dark"
+              theme={theme === 'dark' ? 'vs-dark' : 'vs'}
               value={targetText}
               onChange={(value) => handleTargetChange(value || '')}
               options={{

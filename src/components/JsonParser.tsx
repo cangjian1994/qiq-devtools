@@ -17,7 +17,7 @@ import {
   Table
 } from 'lucide-react';
 
-export const JsonParser: React.FC = () => {
+export const JsonParser: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
   const [jsonText, setJsonText] = useState<string>('{\n  "name": "QiQ DevTools",\n  "version": "1.0.0",\n  "description": "A premium developer utility suite.",\n  "features": [\n    "JSON Parser & Formatter",\n    "JSON Tree View with filtering",\n    "Text Diff editor",\n    "WebSocket simulator",\n    "Cron expression generator"\n  ],\n  "author": {\n    "name": "Antigravity",\n    "github": "https://github.com"\n  }\n}');
   const [parsedJson, setParsedJson] = useState<any>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -390,7 +390,7 @@ export const JsonParser: React.FC = () => {
             <Editor
               height="100%"
               defaultLanguage="json"
-              theme="vs-dark"
+              theme={theme === 'dark' ? 'vs-dark' : 'vs'}
               value={jsonText}
               onChange={(value) => setJsonText(value || '')}
               onMount={handleEditorDidMount}

@@ -166,7 +166,7 @@ const preFormatJsTs = (code: string): string => {
   return result;
 };
 
-export const CodeFormatter: React.FC = () => {
+export const CodeFormatter: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
   const [language, setLanguage] = useState<Lang>('javascript');
   const [sourceCode, setSourceCode] = useState<string>(
     `// JavaScript 示例\nfunction calculateTotal(items) {\n  let total = 0;\n  for(let i=0; i<items.length; i++) {\n    total += items[i].price * (items[i].quantity || 1);\n  }\n  return total;\n}`
@@ -306,7 +306,7 @@ export const CodeFormatter: React.FC = () => {
           <Editor
             height="100%"
             language={language}
-            theme="vs-dark"
+            theme={theme === 'dark' ? 'vs-dark' : 'vs'}
             value={sourceCode}
             onChange={(val) => setSourceCode(val || '')}
             onMount={handleEditorDidMount}

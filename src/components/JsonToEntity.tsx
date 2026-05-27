@@ -4,7 +4,7 @@ import { Copy, Check } from 'lucide-react';
 
 type SupportedLang = 'typescript' | 'go' | 'java' | 'csharp' | 'rust' | 'javascript' | 'php';
 
-export const JsonToEntity: React.FC = () => {
+export const JsonToEntity: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
   const [jsonInput, setJsonInput] = useState<string>('{\n  "id": 1001,\n  "name": "Widget",\n  "active": true,\n  "tags": ["hardware", "tools"],\n  "dimensions": {\n    "width": 12.5,\n    "height": 8.0,\n    "depth": 3.2\n  },\n  "warehouse": {\n    "location": "Aisle 4",\n    "manager": {\n      "name": "Sarah",\n      "email": "sarah@example.com"\n    }\n  }\n}');
   const [activeLang, setActiveLang] = useState<SupportedLang>('typescript');
   const [generatedCode, setGeneratedCode] = useState<string>('');
@@ -260,7 +260,7 @@ export const JsonToEntity: React.FC = () => {
             <Editor
               height="100%"
               defaultLanguage="json"
-              theme="vs-dark"
+              theme={theme === 'dark' ? 'vs-dark' : 'vs'}
               value={jsonInput}
               onChange={(value) => setJsonInput(value || '')}
               options={{
@@ -342,7 +342,7 @@ export const JsonToEntity: React.FC = () => {
                 : activeLang === 'php' ? 'php' 
                 : 'typescript'
               }
-              theme="vs-dark"
+              theme={theme === 'dark' ? 'vs-dark' : 'vs'}
               value={generatedCode}
               options={{
                 readOnly: true,

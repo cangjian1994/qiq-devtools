@@ -65,7 +65,7 @@ const groupSequenceDiff = (diffs: DiffChange[]): DiffGroup[] => {
   return groups;
 };
 
-export const DiffTool: React.FC = () => {
+export const DiffTool: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
   const [activeSubTab, setActiveSubTab] = useState<'text' | 'json' | 'list'>('text');
   
   // Text Diff States
@@ -561,7 +561,7 @@ export const DiffTool: React.FC = () => {
                 <DiffEditor
                   height="100%"
                   language={language}
-                  theme="vs-dark"
+                  theme={theme === 'dark' ? 'vs-dark' : 'vs'}
                   original={originalText}
                   modified={modifiedText}
                   onMount={handleEditorDidMount}
@@ -590,7 +590,7 @@ export const DiffTool: React.FC = () => {
                 <Editor
                   height="100%"
                   language="json"
-                  theme="vs-dark"
+                  theme={theme === 'dark' ? 'vs-dark' : 'vs'}
                   value={jsonA}
                   onChange={(val: string | undefined) => setJsonA(val || '')}
                   options={{ minimap: { enabled: false }, fontSize: 13, automaticLayout: true }}
@@ -613,7 +613,7 @@ export const DiffTool: React.FC = () => {
                 <Editor
                   height="100%"
                   language="json"
-                  theme="vs-dark"
+                  theme={theme === 'dark' ? 'vs-dark' : 'vs'}
                   value={jsonB}
                   onChange={(val: string | undefined) => setJsonB(val || '')}
                   options={{ minimap: { enabled: false }, fontSize: 13, automaticLayout: true }}
@@ -669,7 +669,7 @@ export const DiffTool: React.FC = () => {
                 <Editor
                   height="100%"
                   language="text"
-                  theme="vs-dark"
+                  theme={theme === 'dark' ? 'vs-dark' : 'vs'}
                   value={listTextA}
                   onChange={(val: string | undefined) => setListTextA(val || '')}
                   options={{ minimap: { enabled: false }, fontSize: 13, automaticLayout: true }}
@@ -697,7 +697,7 @@ export const DiffTool: React.FC = () => {
                 <Editor
                   height="100%"
                   language="text"
-                  theme="vs-dark"
+                  theme={theme === 'dark' ? 'vs-dark' : 'vs'}
                   value={listTextB}
                   onChange={(val: string | undefined) => setListTextB(val || '')}
                   options={{ minimap: { enabled: false }, fontSize: 13, automaticLayout: true }}

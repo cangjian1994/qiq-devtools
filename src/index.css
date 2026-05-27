@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* HSL Color System */
+  /* HSL Color System - Default Dark Theme */
   --bg-primary: #0a0c10;
   --bg-secondary: #12161f;
   --bg-tertiary: #191f2c;
@@ -30,6 +30,96 @@
   
   --glass-bg: rgba(18, 22, 31, 0.7);
   --glass-blur: blur(12px);
+
+  /* Alerts Dynamic Colors */
+  --alert-error-bg: rgba(239, 68, 68, 0.08);
+  --alert-error-text: #fca5a5;
+  --alert-success-bg: rgba(16, 185, 129, 0.08);
+  --alert-success-text: #a7f3d0;
+  --alert-info-bg: rgba(99, 102, 241, 0.08);
+  --alert-info-text: #c7d2fe;
+
+  /* Diff Dynamic Colors */
+  --diff-added-bg: rgba(16, 185, 129, 0.08);
+  --diff-added-text: #86efac;
+  --diff-deleted-bg: rgba(239, 68, 68, 0.08);
+  --diff-deleted-text: #fca5a5;
+
+  /* JSON Tree Dynamic Colors */
+  --tree-key: #c084fc;
+  --tree-string: #f472b6;
+  --tree-number: #38bdf8;
+  --tree-boolean: #fbbf24;
+
+  /* Hover & Active States */
+  --hover-bg: rgba(255, 255, 255, 0.03);
+  --nav-hover-bg: rgba(255, 255, 255, 0.03);
+  --nav-active-bg: rgba(99, 102, 241, 0.08);
+  --nav-active-border: rgba(99, 102, 241, 0.15);
+  
+  /* Cards & Shadows */
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --card-hover-border: rgba(255, 255, 255, 0.12);
+  --card-hover-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px var(--border-glow);
+  --toast-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 10px var(--border-glow);
+}
+
+[data-theme='light'] {
+  /* HSL Color System - Light Theme */
+  --bg-primary: #f8fafc;     /* Slate 50 */
+  --bg-secondary: #ffffff;   /* Pure White */
+  --bg-tertiary: #f1f5f9;    /* Slate 100 */
+  --border-color: rgba(15, 23, 42, 0.08);
+  --border-glow: rgba(79, 70, 229, 0.08);
+  
+  --text-primary: #0f172a;   /* Slate 900 */
+  --text-secondary: #475569; /* Slate 600 */
+  --text-muted: #64748b;     /* Slate 500 */
+  
+  --accent-primary: #4f46e5; /* Indigo 600 */
+  --accent-secondary: #9333ea; /* Purple 600 */
+  --accent-glow: rgba(79, 70, 229, 0.25);
+  
+  --success: #059669;        /* Emerald 600 */
+  --success-glow: rgba(5, 150, 105, 0.1);
+  --error: #dc2626;          /* Red 600 */
+  --error-glow: rgba(220, 38, 38, 0.1);
+  --warning: #d97706;        /* Amber 600 */
+  
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-blur: blur(12px);
+
+  /* Alerts Dynamic Colors */
+  --alert-error-bg: rgba(220, 38, 38, 0.06);
+  --alert-error-text: #b91c1c;
+  --alert-success-bg: rgba(5, 150, 105, 0.06);
+  --alert-success-text: #047857;
+  --alert-info-bg: rgba(79, 70, 229, 0.06);
+  --alert-info-text: #3730a3;
+
+  /* Diff Dynamic Colors */
+  --diff-added-bg: rgba(5, 150, 105, 0.08);
+  --diff-added-text: #047857;
+  --diff-deleted-bg: rgba(220, 38, 38, 0.08);
+  --diff-deleted-text: #b91c1c;
+
+  /* JSON Tree Dynamic Colors */
+  --tree-key: #7c3aed;     /* Violet 600 */
+  --tree-string: #db2777;  /* Pink 600 */
+  --tree-number: #0284c7;  /* Sky 600 */
+  --tree-boolean: #d97706; /* Amber 600 */
+
+  /* Hover & Active States */
+  --hover-bg: rgba(15, 23, 42, 0.04);
+  --nav-hover-bg: rgba(15, 23, 42, 0.04);
+  --nav-active-bg: rgba(79, 70, 229, 0.08);
+  --nav-active-border: rgba(79, 70, 229, 0.15);
+  
+  /* Cards & Shadows */
+  --card-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.08);
+  --card-hover-border: rgba(15, 23, 42, 0.15);
+  --card-hover-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.12), 0 0 15px var(--border-glow);
+  --toast-shadow: 0 4px 20px rgba(15, 23, 42, 0.12), 0 0 10px var(--border-glow);
 }
 
 /* Reset & Base Styles */
@@ -244,13 +334,13 @@ input:focus, select:focus, textarea:focus {
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: var(--card-shadow);
   transition: var(--transition-smooth);
 }
 
 .card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px var(--border-glow);
+  border-color: var(--card-hover-border);
+  box-shadow: var(--card-hover-shadow);
 }
 
 /* Editor Container & Custom controls */
@@ -321,7 +411,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .tree-key {
-  color: #c084fc; /* soft purple for keys */
+  color: var(--tree-key);
   font-weight: 500;
   cursor: pointer;
 }
@@ -329,10 +419,10 @@ input:focus, select:focus, textarea:focus {
   text-decoration: underline;
 }
 
-.tree-val-string { color: #f472b6; } /* pink */
-.tree-val-number { color: #38bdf8; } /* blue */
-.tree-val-boolean { color: #fbbf24; } /* amber */
-.tree-val-null { color: #94a3b8; font-style: italic; } /* slate */
+.tree-val-string { color: var(--tree-string); }
+.tree-val-number { color: var(--tree-number); }
+.tree-val-boolean { color: var(--tree-boolean); }
+.tree-val-null { color: var(--text-muted); font-style: italic; }
 
 .tree-highlight {
   background-color: rgba(99, 102, 241, 0.3);
@@ -353,21 +443,21 @@ input:focus, select:focus, textarea:focus {
 }
 
 .alert.error {
-  background: rgba(239, 68, 68, 0.08);
+  background: var(--alert-error-bg);
   border-color: var(--error);
-  color: #fca5a5;
+  color: var(--alert-error-text);
 }
 
 .alert.success {
-  background: rgba(16, 185, 129, 0.08);
+  background: var(--alert-success-bg);
   border-color: var(--success);
-  color: #a7f3d0;
+  color: var(--alert-success-text);
 }
 
 .alert.info {
-  background: rgba(99, 102, 241, 0.08);
+  background: var(--alert-info-bg);
   border-color: var(--accent-primary);
-  color: #c7d2fe;
+  color: var(--alert-info-text);
 }
 
 /* Toast Messages */
@@ -377,7 +467,7 @@ input:focus, select:focus, textarea:focus {
   right: 2rem;
   background: var(--bg-tertiary);
   border: 1px solid var(--accent-primary);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 10px var(--border-glow);
+  box-shadow: var(--toast-shadow);
   padding: 0.75rem 1.25rem;
   border-radius: 8px;
   z-index: 1000;
@@ -490,15 +580,15 @@ input:focus, select:focus, textarea:focus {
 
 .nav-item:hover {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--nav-hover-bg);
   box-shadow: none;
   transform: none;
 }
 
 .nav-item.active {
   color: var(--accent-primary);
-  background: rgba(99, 102, 241, 0.08);
-  border-color: rgba(99, 102, 241, 0.15);
+  background: var(--nav-active-bg);
+  border-color: var(--nav-active-border);
   font-weight: 600;
   box-shadow: none;
   transform: none;
@@ -548,7 +638,7 @@ input:focus, select:focus, textarea:focus {
 
 .collapse-toggle-btn:hover {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--nav-hover-bg);
   box-shadow: none;
   transform: none;
 }

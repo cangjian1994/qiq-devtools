@@ -15,7 +15,9 @@ import {
   Lock,
   UserCheck,
   Hash,
-  Calendar
+  Calendar,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 export type ToolType = 
@@ -36,9 +38,11 @@ export type ToolType =
 interface SidebarProps {
   activeTool: ToolType;
   setActiveTool: (tool: ToolType) => void;
+  theme: 'dark' | 'light';
+  setTheme: (theme: 'dark' | 'light') => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ activeTool, setActiveTool }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ activeTool, setActiveTool, theme, setTheme }) => {
   const [isCollapsed, setIsCollapsed] = React.useState(false);
 
   const menuItems = [
@@ -85,7 +89,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTool, setActiveTool }) =
         })}
       </nav>
 
-      <div className="sidebar-footer">
+      <div className="sidebar-footer" style={{ display: 'flex', flexDirection: isCollapsed ? 'column' : 'row', gap: '8px', alignItems: 'center', justifyContent: isCollapsed ? 'center' : 'space-between', width: '100%' }}>
+        <button 
+          className="collapse-toggle-btn"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          title={theme === 'dark' ? '切换为白天模式' : '切换为黑夜模式'}
+          style={{ display: 'flex', alignItems: 'center', gap: '4px' }}
+        >
+          {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          {!isCollapsed && <span style={{ fontSize: '0.8rem', fontWeight: 500 }}>{theme === 'dark' ? '白天模式' : '黑夜模式'}</span>}
+        </button>
         <button 
           className="collapse-toggle-btn"
           onClick={() => setIsCollapsed(!isCollapsed)}
