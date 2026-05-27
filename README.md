@@ -1,81 +1,65 @@
-# React + TypeScript + Vite
+# ✨ QiQ DevTools
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**QiQ DevTools** 是一款专为开发者打造的高颜值、轻量级且功能完善的在线工具箱，支持白天与黑夜双主题切换。整个系统采用纯前端技术构建，所有计算均在浏览器本地完成，绝对保障您的数据安全与隐私。
 
-Currently, two official plugins are available:
+👉 **[在线体验 QiQ DevTools](https://cangjian1994.github.io/qiq-devtools/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 核心功能模块
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📂 **JSON 解析与格式化**：支持高阶树状视图解析、属性过滤与智能折叠，完美应对超大 JSON 文件。
+- 💻 **JSON 转 Entity**：一键将 JSON 对象转换为 TypeScript, Go, Java, C#, Rust 实体类，或 JS 对象 / PHP 数组。
+- 🔄 **JSON 格式转换**：支持 JSON 与 YAML / XML 格式的实时双向转换。
+- ⚖️ **文本对比 (Diff)**：支持普通文本、JSON、键值对列表的左右双栏实时高亮对比。
+- ⏰ **时间戳转换**：时间戳与标准日期时间格式互转，提供一键复制当前时间戳等工具。
+- 🔍 **正则表达式测试**：实时匹配、分组捕获，并在文本中高亮显示匹配区域。
+- 📅 **Cron 表达式生成**：提供可视化的 Cron 生成配置，自动计算未来多次的运行执行时间。
+- 📡 **WebSocket 仿真测试**：支持自定义协议地址，实现 WebSocket 消息收发并提供格式化的实时日志流。
+- 🔢 **基础编码与解密**：包含 URL 编码、Base64 编解码、MD5/SHA 哈希计算等。
+- 🎨 **代码美化与压缩**：支持 JavaScript, HTML, CSS, JSON 等代码的美化格式化或极致压缩。
+- 🔒 **对称加解密 (AES)**：支持 AES-128 / AES-256 加解密，可配置工作模式和填充方式。
+- 🔑 **JWT 在线解析**：支持一键解码 JWT 字符串，分块查看 Header, Payload 与 Signature 信息。
+- 🧮 **进制转换与开发辅助**：提供 2/8/10/16 进制互转及常用的开发单位转换工具。
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🎨 界面设计
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **白天模式 / 黑夜模式**：支持全局一键切换。暗黑主题深邃酷炫，白天主题温和雅致（采用高质感 Slate 灰白色调，杜绝刺眼纯白）。
+- **极佳的视觉反馈**：全面的交互微动画与卡片悬浮动态投影。
+- **Monaco Editor 支持**：核心编辑器全面使用微软 Monaco 核心，自动根据当前全局主题动态更新编辑器配色（`vs` / `vs-dark`）。
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ 本地开发指南
+
+1. **克隆仓库**：
+   ```bash
+   git clone https://github.com/cangjian1994/qiq-devtools.git
+   ```
+
+2. **安装依赖**：
+   ```bash
+   npm install
+   ```
+
+3. **运行开发服务器**：
+   ```bash
+   npm run dev
+   ```
+
+4. **构建生产版本**：
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📄 开源协议 (License)
+
+本项目采用 **[MIT 协议](LICENSE)** 开源。您可以自由分发、修改并在任何商业/非商业项目中使用。
+
+```text
+Copyright (c) 2026 cangjian1994
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-## 🛠 QiQ DevTools
-
-**QiQ DevTools** 是一款专为开发者打造的高颜值、轻量级在线工具箱，包含以下实用功能：
-* JSON 格式化与高阶树状解析
-* JSON 与 Java/C#/Dart 实体类一键转换
-* 正则表达式测试器 & 匹配高亮
-* Cron 表达式生成与时间戳转换
-* WebSocket 仿真测试与基础对称加解密
