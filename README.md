@@ -70,4 +70,12 @@ export default defineConfig([
     },
   },
 ])
-```
+
+## 🛠 QiQ DevTools
+
+**QiQ DevTools** 是一款专为开发者打造的高颜值、轻量级在线工具箱，包含以下实用功能：
+* JSON 格式化与高阶树状解析
+* JSON 与 Java/C#/Dart 实体类一键转换
+* 正则表达式测试器 & 匹配高亮
+* Cron 表达式生成与时间戳转换
+* WebSocket 仿真测试与基础对称加解密
