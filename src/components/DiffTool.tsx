@@ -531,7 +531,7 @@ export const DiffTool: React.FC = () => {
               <Trash2 size={14} /> 清空
             </button>
           </div>
-          <div className="pane-layout" style={{ flex: 1, minHeight: '500px' }}>
+          <div className="pane-layout" style={{ flex: 1, minHeight: '650px' }}>
             <div className="editor-panel" style={{ height: '100%' }}>
               <div className="panel-header">
                 <div className="flex-row justify-between" style={{ width: '100%' }}>
@@ -583,7 +583,7 @@ export const DiffTool: React.FC = () => {
       {activeSubTab === 'json' && (
         /* Tab 2: JSON Diff Pane */
         <div className="flex-col flex-1 gap-4">
-          <div className="pane-layout" style={{ minHeight: '260px', height: '260px' }}>
+          <div className="pane-layout" style={{ minHeight: '400px', height: '400px' }}>
             <div className="editor-panel" style={{ height: '100%' }}>
               <div className="panel-header"><span>JSON 数据 A (源)</span></div>
               <div className="panel-body">
@@ -657,7 +657,7 @@ export const DiffTool: React.FC = () => {
       {activeSubTab === 'list' && (
         /* Tab 3: List Diff Pane */
         <div className="flex-col flex-1 gap-4">
-          <div className="pane-layout" style={{ minHeight: '260px', height: '260px' }}>
+          <div className="pane-layout" style={{ minHeight: '400px', height: '400px' }}>
             <div className="editor-panel" style={{ height: '100%' }}>
               <div className="panel-header">
                 <span>数据列表 A</span>
@@ -794,7 +794,7 @@ export const DiffTool: React.FC = () => {
                 </div>
               </div>
 
-              <div style={{ flex: 1, overflowY: 'auto', maxHeight: '400px', border: '1px solid var(--border-color)', borderRadius: '8px', background: 'var(--bg-secondary)' }}>
+              <div style={{ flex: 1, overflowY: 'auto', maxHeight: '550px', border: '1px solid var(--border-color)', borderRadius: '8px', background: 'var(--bg-secondary)' }}>
                 {diffSequenceResult.length === 0 ? (
                   <div style={{ color: 'var(--text-muted)', textAlign: 'center', padding: '2rem' }}>暂无比对数据，请输入后自动分析</div>
                 ) : (

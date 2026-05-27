@@ -215,8 +215,8 @@ input:focus, select:focus, textarea:focus {
   flex-direction: column;
   flex: 1;
   padding: 1.5rem;
-  overflow-y: auto;
-  max-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .tool-header {
@@ -261,8 +261,9 @@ input:focus, select:focus, textarea:focus {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
-  height: 600px;
+  height: 100%;
   flex: 1;
+  min-height: 0;
 }
 
 .panel-header {

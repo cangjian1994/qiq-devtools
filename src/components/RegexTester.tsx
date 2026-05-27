@@ -177,7 +177,7 @@ export const RegexTester: React.FC = () => {
         {/* Core Workspace Grid */}
         <div className="pane-layout">
           {/* Left panel: Input Test Text */}
-          <div className="editor-panel" style={{ height: '400px' }}>
+          <div className="editor-panel" style={{ height: '550px' }}>
             <div className="panel-header">
               <span>测试文本 (Test Text)</span>
             </div>
@@ -202,7 +202,7 @@ export const RegexTester: React.FC = () => {
           </div>
 
           {/* Right panel: Live Highlights */}
-          <div className="editor-panel" style={{ height: '400px' }}>
+          <div className="editor-panel" style={{ height: '550px' }}>
             <div className="panel-header">
               <span>匹配高亮 (Highlighted Result)</span>
               <span className="badge" style={{ background: 'rgba(99, 102, 241, 0.2)', color: 'var(--accent-primary)', padding: '2px 8px', borderRadius: '4px', fontSize: '0.75rem' }}>

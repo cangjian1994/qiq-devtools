@@ -331,7 +331,7 @@ export const CronGenerator: React.FC = () => {
               <button onClick={() => setActiveTab('month')} className={`tab-btn ${activeTab === 'month' ? 'active' : ''}`}>月 (Months)</button>
               <button onClick={() => setActiveTab('week')} className={`tab-btn ${activeTab === 'week' ? 'active' : ''}`}>周 (DayOfWeek)</button>
             </div>
-            <div style={{ minHeight: '260px' }}>
+            <div style={{ minHeight: '400px' }}>
               {renderTabContent()}
             </div>
           </div>

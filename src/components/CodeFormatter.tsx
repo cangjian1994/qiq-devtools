@@ -284,7 +284,7 @@ export const CodeFormatter: React.FC = () => {
         </select>
       </div>
 
-      <div className="editor-panel" style={{ flex: 1, minHeight: '500px' }}>
+      <div className="editor-panel" style={{ flex: 1, minHeight: '650px' }}>
         <div className="panel-header">
           <span>编辑器控制台</span>
           <div className="flex-row gap-2">

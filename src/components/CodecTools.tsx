@@ -214,7 +214,7 @@ export const CodecTools: React.FC = () => {
         {/* Base64 Tab */}
         {activeTab === 'base64' && (
           <div className="flex-col gap-4">
-            <div className="pane-layout" style={{ minHeight: '350px' }}>
+            <div className="pane-layout" style={{ minHeight: '480px' }}>
               <div className="editor-panel">
                 <div className="panel-header"><span>原始文本 (明文)</span></div>
                 <textarea 
@@ -248,7 +248,7 @@ export const CodecTools: React.FC = () => {
         {/* URL Tab */}
         {activeTab === 'url' && (
           <div className="flex-col gap-4">
-            <div className="pane-layout" style={{ minHeight: '350px' }}>
+            <div className="pane-layout" style={{ minHeight: '480px' }}>
               <div className="editor-panel">
                 <div className="panel-header"><span>未编码的 URL</span></div>
                 <textarea 
@@ -288,7 +288,7 @@ export const CodecTools: React.FC = () => {
                 value={hashInput}
                 onChange={(e) => setHashInput(e.target.value)}
                 placeholder="在此输入文本..."
-                style={{ width: '100%', height: '100px', marginTop: '0.5rem', resize: 'none' }}
+                style={{ width: '100%', height: '160px', marginTop: '0.5rem', resize: 'none' }}
               />
             </div>
 

@@ -131,7 +131,7 @@ export const CryptoSymmetric: React.FC = () => {
         )}
 
         {/* Inputs/Outputs */}
-        <div className="pane-layout" style={{ minHeight: '350px' }}>
+        <div className="pane-layout" style={{ minHeight: '480px' }}>
           {/* Input text */}
           <div className="editor-panel">
             <div className="panel-header">
